@@ -11,7 +11,7 @@ const app = express();
 const port = 3002;
 
 const openai = new OpenAI({
-  apiKey: 'sk-proj-VjyrIHfKhDp150JK2IcAT3BlbkFJQDyV0qaRggCdNtOlLnu7',
+  apiKey: 'sk-proj-83GpVqm6FE6fzaxq3vDRT3BlbkFJDIZ3y3Pz7AyEGeh5PhPL',
 });
 
 app.use(express.static('public'));
