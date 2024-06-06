@@ -3,7 +3,8 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import OpenAI from 'openai';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -11,7 +12,7 @@ const app = express();
 const port = 3001;
 
 const openai = new OpenAI({
-  apiKey: 'sk-proj-jzBI4eFDxedk20lKgkqPT3BlbkFJkqw0hpeqZS6YkjwGZrgu',
+  apiKey: process.env.OPEN_AI_KEY,
 });
 
 app.use(express.static('public'));
