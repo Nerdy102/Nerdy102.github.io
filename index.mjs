@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3001;
+const port = 3002;
 
 const openai = new OpenAI({
   apiKey: 'sk-proj-VjyrIHfKhDp150JK2IcAT3BlbkFJQDyV0qaRggCdNtOlLnu7',
