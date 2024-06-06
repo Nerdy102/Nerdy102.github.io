@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TELL - Prepositions Overview</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #f1f1f1; /* Light text color for contrast */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .main-content {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1000px;
+        }
+        .blank { font-weight: bold; color: blue; }
+        .feedback { font-weight: bold; }
+        .correct { color: green; }
+        .incorrect { color: red; }
+        .feedback-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .feedback-item.correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .feedback-item.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .generate-button {
+            background-color: #ff9800;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .generate-button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+        .generate-button:active {
+            background-color: #cc7a00;
+            transform: scale(1);
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main content -->
+<div class="main-content">
+
+    <div class="w3-row w3-padding-16 w3-theme-d1">
+        <div class="w3-container">
+            <h1 class="w3-text-orange">Preposition Quest: Master the Art of Prepositions!</h1>
+        
+
+    <!-- Exercise 1: Fill in blank -->
+    <div class="w3-row w3-padding-16 w3-theme-d1 ">
+        <div class="w3-container">
+            <h3 class="w3-text-orange"><i class="em em-dart"></i> Exercise 1: Fill-in-the-Blank </h3>
+            
+            <button id="generate-sentences-1" class="generate-button">Generate</button>
+            
+            <form id="exercise-form-1" style="display:none;" class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin">
+                <div id="sentences-container-1" class="w3-container"></div>
+                <button type="submit" class="w3-button w3-theme">Submit Answers</button>
+            </form>
+            
+            <div id="feedback-container-1" class="w3-container w3-padding-16"></div>
+        </div>
+    </div>
+
+    <!-- Exercise 2: Analyze prepositions -->
+    <div class="w3-row w3-padding-16 w3-theme-d1">
+        <div class="w3-container">
+            <h3 class="w3-text-orange"><i class="em em-dart"></i> Exercise 2: Analyze Prepositions Function</h3>
+            
+            <form id="analysisForm" class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin">
+                <div class="w3-container">
+                    <label for="sentenceInput">Enter a sentence to analyze:</label>
+                    <textarea id="sentenceInput" name="sentence" class="w3-input" placeholder="Enter a sentence to analyze prepositions..." required></textarea>
+                </div>
+                <button type="submit" class="w3-button w3-theme">Analyze Sentence</button>
+            </form>
+            
+            <div id="resultSection" class="w3-container w3-padding-16 hidden">
+                <div id="spinner" class="hidden">
+                    <i class="fa fa-spinner fa-spin"></i> Analyzing...
+                </div>
+                <div id="analysisResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 3: Multiple Choice -->
+    <div class="w3-row w3-padding-16 w3-theme-d1">
+        <div class="w3-container">
+            <h3 class="w3-text-orange"><i class="em em-dart"></i> Exercise 3: Multiple Choice</h3>
+            
+            <button id="generate-exercise-3" class="generate-button">Generate</button>
+            
+            <form id="exercise-form-3" style="display:none;" class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin">
+                <div id="questions-container-3" class="w3-container"></div>
+                <button type="submit" class="w3-button w3-theme">Submit Answers</button>
+            </form>
+            
+            <div id="feedback-container-3" class="w3-container w3-padding-16"></div>
+        </div>
+    </div>
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            console.log("Accordion button clicked!");
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
+
